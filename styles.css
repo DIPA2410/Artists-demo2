@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.horizontal-scroll {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.artist {
+    min-width: 33.33%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.artist img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.artist-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    margin-top: 10px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.scroll-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.scroll-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .artist {
+        min-width: 50%;
+        flex-direction: column;
+    }
+
+    .artist-details {
+        padding: 15px;
+    }
+
+    .scroll-button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .artist {
+        min-width: 100%;
+        flex-direction: column;
+    }
+
+    .artist img {
+        margin-bottom: 10px;
+    }
+
+    .artist-details {
+        padding: 10px;
+    }
+
+    .scroll-button {
+        padding: 5px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .label {
+        font-weight: normal;
+    }
+}
